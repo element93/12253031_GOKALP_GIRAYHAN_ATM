@@ -1,20 +1,24 @@
+
 #include <stdio.h>
 #include <conio.h>
 void main()
 {
 	int sifre ;
-	int miktar=2500  ;
+	int miktar  ;
 	int secenek ;
 	int aciklama ;
 	int ekleme;
 	int cikarma;
 	
 	//aciklama = para üstünde yapılacak islemler.
-	int hesapno;
-	int hesapno2;
+	char hesapno[25];
+	miktar=2500;
 	printf("ATM\n");
 	printf("Bankadaki uygulamalar icin ad ve sifrenizi yaziniz\n");
-	printf("Adinizi giriniz");
+	int hesapno2;
+	printf("hesapno giriniz");
+	gets (hesapno);
+	printf("Sifrenizi girin");
 	scanf("%d", &sifre);
 	if(sifre==1001) // atmde sifre 1001 kabul edilecektir.
 	{
@@ -56,7 +60,7 @@ void main()
 			if(aciklama<miktar)
 			{
 	cikarma=miktar-aciklama;
-	printf("Havale yapilmistir, hesabinizda %d tl miktar kalmistir \n",cikarma);
+	printf("Havale basarili hesabinizda %d tl miktar var \n",cikarma);
 	}
 	else if(aciklama>miktar)
 	printf("Bu miktar yollanamaz,yeterli bakiye yok)\n");
@@ -68,9 +72,10 @@ printf("Bakiyede para yok");
 		printf("Islem iptal edildi\n");
 			break;
 	default:
-		printf("1,2,3,4 islemlerinden birini secin\n");
+		printf("1-2-3-4 ten birini secin\n");
 		break;
 }
 }
 else
 	printf("Sifre yanlis tekrar deneyin\n");
+}
