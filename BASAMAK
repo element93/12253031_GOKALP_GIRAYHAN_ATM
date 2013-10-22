@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+	int x;
+	int y;
+	int z;
+	int t;
+	int sayi;
+	printf("4 basamakli sayiyi yazin");
+	scanf("%d", &sayi);
+	x=sayi/1000;
+	y=(sayi-(x*1000))/100;
+	z=(sayi-(x*1000+y*100))/10;
+	t=(sayi-(x*1000+y*100+z*10));
+
+	if(sayi>=1000 && 9999>=sayi)
+	{
+		printf("%d tane birler basamagi\n",t);
+		printf("%d tane onlar basamagi\n",z);
+		printf("%d tane yuzler basamagi\n",y);
+		printf("%d tane binler basamagi\n",x);
+	}
+	else
+		printf("4 basamakli sayi girin");
+}
+	
