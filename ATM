@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+	int sifre ;
+	int miktar=2500  ;
+	int secenek ;
+	int aciklama ;
+	int ekleme;
+	int cikarma;
+	
+	//aciklama = para üstünde yapılacak islemler.
+	int hesapno;
+	int hesapno2;
+	printf("ATM\n");
+	printf("Bankadaki uygulamalar icin ad ve sifrenizi yaziniz\n");
+	printf("Adinizi giriniz");
+	scanf("%d", &sifre);
+	if(sifre==1001) // atmde sifre 1001 kabul edilecektir.
+	{
+	printf("Bakiyenizde %d tl miktar vardır\n", miktar);
+	printf("Sifre kabul edilmistir,devam edin\n");
+	printf("1-Miktar ekle\n2-Miktar cek\n3-Miktar havale et\n4-Islemi iptal et\n");
+	scanf("%d", &secenek);
+	switch(secenek)
+	{
+	case 1:
+		printf("İstediginiz tutari yazin=\n");
+		scanf("%d", &aciklama);
+		ekleme=miktar+aciklama;
+		printf("Bakiyenizde %d tl miktar vardir\n",ekleme);
+
+		break;
+		
+	case 2:
+		printf("İstediginiz miktari girin=");
+		scanf("%d", &aciklama);
+		if(aciklama<miktar)
+		{
+			cikarma=miktar-aciklama;
+			printf("Bakiyenizde %d tl miktar kaldi\n",cikarma);
+		}
+		else if(aciklama>miktar)
+			printf("Bakiyenizde bu miktar yok\n");
+		else
+			printf("Bakiyeniz bitmistir\n");
+		break;
+		
+	case 3:
+
+		printf("Havale yapcaginiz kisinin hesap nosunu yazin\n");
+		scanf("%d", &hesapno2);
+		printf("%d hesapnolu kisiye para yolla \n",hesapno2);
+		printf("gidecek miktari yazin");
+		scanf("%d", &aciklama);
+			if(aciklama<miktar)
+			{
+	cikarma=miktar-aciklama;
+	printf("Havale yapilmistir, hesabinizda %d tl miktar kalmistir \n",cikarma);
+	}
+	else if(aciklama>miktar)
+	printf("Bu miktar yollanamaz,yeterli bakiye yok)\n");
+	else
+printf("Bakiyede para yok");
+	break;
+
+	case 4:
+		printf("Islem iptal edildi\n");
+			break;
+	default:
+		printf("1,2,3,4 islemlerinden birini secin\n");
+		break;
+}
+}
+else
+	printf("Sifre yanlis tekrar deneyin\n");
